@@ -1,0 +1,128 @@
+.Header {
+  z-index: 9999;
+    position: fixed;
+    top: 0; /* Stick it to the top */
+    max-height: 10vh;
+    width: 100vw;
+    height:10vh;
+    display: grid;
+    grid-template-areas: 'logo . . . . . nav';
+  
+    /* Cosmetics */
+    background-color: #161b22;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background: #b24592;
+   /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #161b22, #1e2630);
+   /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #161b22, #3c4a5e);
+  }
+  
+  .Logo {
+    grid-area: logo;
+    height: 70px;
+    background-color: #282c34;
+  }
+  
+  .Nav {
+    display: grid;
+    grid-area: nav;
+    grid-template-columns: repeat(4, auto);
+    grid-row-gap: 5px;
+    align-items: center;
+    justify-items: center;
+    float:right;
+  }
+  .Nav a {
+    display:flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    min-width:100px;
+    text-decoration: none;
+  }
+  .Nav a:hover {
+    cursor: pointer;
+    padding:5px 0 5px 0;
+    border-radius:30px;
+    padding:5px;
+    background-color: transparent;
+    border:1px solid white;
+  }
+  .Nav button {
+    padding: 10px;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: #61dafb;
+    font-weight: 600;
+    background-color: #282c34;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 70ms;
+  }
+  
+  .Nav button:active {
+    transform: translateY(3px);
+    box-shadow: 0px 2px 0px 0px rgba(255, 0, 76, 0.25);
+    background-color: rgba(255, 0, 43, 0.5);
+    box-shadow: 0px 5px 0px 0px rgba(255, 0, 43, 0.25);
+  }
+  
+  .Burger {
+    display: none;
+    grid-area: burger;
+    margin: 0 20px 0 0;
+    padding: 0;
+    justify-self: end;
+    font-size: 40px;
+    border: none;
+    background: none;
+    outline: none;
+    transition: 0.1s;
+  }
+  .Burger:active {
+    transform: scale(1.2);
+  }
+  
+  @media (max-width: 700px) {
+    .Header {
+      grid-template-areas: 'logo burger' 'nav nav';
+    }
+    .Nav {
+      grid-template-rows: repeat(4, auto);
+      grid-template-columns: none;
+      grid-row-gap: 20px;
+  
+      padding: 30px 0 30px;
+      background: rgba(40, 44, 47, 0.95);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    
+    .Burger {
+      display: inline;
+    }
+    
+  }
+  
+  .NavAnimation-enter {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  .NavAnimation-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 350ms, transform 350ms;
+  }
+  .NavAnimation-exit {
+    opacity: 1;
+  }
+  .NavAnimation-exit-active {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 350ms, transform 350ms;
+  }
+  
