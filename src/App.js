@@ -10,12 +10,35 @@ import About from './components/pages/About/About';
 import Contact from './components/pages/Contact/Contact';
 import Projects from './components/pages/Projects/Projects';
 import Footer from './components/Navbar/Footer';
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 
 const pageArea= {
   background:'red'
 }
 function App() {
+  const [scrollValue,setScrollValue] = useState(null)
+  const [isBottom,setBottom] = useState(false)
+  useEffect(() => {
+    const scrolling_function = () => {
+      const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+      const body = document.body;
+      const html = document.documentElement;
+      const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
+      const windowBottom = windowHeight + window.pageYOffset;
+      console.log(windowBottom,docHeight)
+      if (window.innerHeight + window.pageYOffset>= docHeight-10) {
+            setBottom(true)
+            setScrollValue(window.pageYOffset)
+            window.removeEventListener('scroll',scrolling_function)
+      } else {
+        setBottom(false)
+            setScrollValue(window.pageYOffset)
+            window.removeEventListener('scroll',scrolling_function)
+      }
+    }
+    window.addEventListener('scroll', scrolling_function);
+}, [ scrollValue])
+
   return (
     <Router>
       <Header />
@@ -27,7 +50,7 @@ function App() {
           <Route path='/contact' component={Contact} />
         </Switch>
       </div>
-      <Footer/>
+      <Footer isBottom={isBottom}/>
   </Router>
   );
 }

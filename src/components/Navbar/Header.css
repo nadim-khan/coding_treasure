@@ -2,16 +2,13 @@
     z-index: 9999;
     position: fixed;
     top: 0; /* Stick it to the top */
-    background: linear-gradient(to right, #433d7d, rgba(12, 12, 12, 0.171));
+    background: linear-gradient(to right, #433d7d, #674ca1);
     background-color: rgba(12, 12, 12, 0.171);
     max-height: 10vh;
     width: 100vw;
     height:10vh;
     display: grid;
     grid-template-areas: 'logo . . . . . nav';
-    box-shadow: -2px 26px 20px -21px rgba(0,0,0,0.16);
--webkit-box-shadow: -2px 26px 20px -21px rgba(0,0,0,0.16);
--moz-box-shadow: -2px 26px 20px -21px rgba(0,0,0,0.16);
   
   }
   
@@ -94,7 +91,6 @@
       margin-top: -9px;
       padding: 30px 0 30px;
       background: linear-gradient(to right, #3b366e, #694ea4);
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
     }
