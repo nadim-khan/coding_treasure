@@ -10,7 +10,7 @@
 body {
   margin-top:10vh;
   height:auto;
-  background-color: #0d1117;
+  background: linear-gradient(to right, #433d7d, #674ca1);
   color:white;
   max-height:90vh;
   overflow-y: auto;
@@ -24,15 +24,25 @@ code {
 }
 
 body::-webkit-scrollbar {
-  width: 0.3em;
-  scroll-margin: 50px 0 0 50px;
+  width: 0.45em;
 }
  
 body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(75, 213, 248, 0.3);
+  box-shadow: inset 0 0 6px #131124;
 }
  
 body::-webkit-scrollbar-thumb {
-  background-color: rgb(156, 154, 154);
-  outline: 1px solid rgb(209, 216, 223);
+  border-radius:0.2em;
+  background: linear-gradient(to bottom, #7b6feb, #d3c0fd);
+  outline: 2px solid #b89bf8(209, 216, 223);
 }
+
+@media (max-width: 700px) {
+  body {
+    font-size:12px;
+    margin-top:10vh;
+  }
+}
+
+
+

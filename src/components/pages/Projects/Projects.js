@@ -1,9 +1,10 @@
 import React from 'react';
+import Footer from '../../Navbar/Footer';
 import './style.css'
 
 const Projects = () => {
     return (
-        <div>            
+        <div className="mainContent">            
             <div id="con2">
                 <div className="zayn_2 shadow">
                 <span className="pop">Popular</span> <span className="date">July 2017</span>
@@ -37,9 +38,7 @@ const Projects = () => {
                 ever green.</h4>
                 </div>
             </div>
-            <div className="footer">
-                <h1>Created July/21/2017 3:00 PM.</h1>
-            </div>
+            <Footer/>
                 </div>
     )
 }

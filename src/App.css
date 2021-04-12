@@ -7,6 +7,23 @@
   margin: 0;
   padding: 0;
 }
+.pageArea{
+  min-height:75vh;
+  height:auto;
+}
+@media (max-width: 734px) {
+  .pageArea{
+    min-height:70vh;
+    height:auto;
+  }
+}
+@media (max-width: 736px) {
+  .pageArea{
+    min-height:70vh;
+    height:auto;
+  }
+}
+
 .App {
   text-align: center;
 }

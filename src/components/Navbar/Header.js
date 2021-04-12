@@ -8,9 +8,7 @@ import {
   Link as NavLink
   } from "react-router-dom";
 
-  const activeLink = {
-      color:'#61dafb'
-  }
+  
 
 export default function Header() {
   const [isNavVisible, setNavVisibility] = useState(false);
@@ -51,7 +49,7 @@ export default function Header() {
         classNames="NavAnimation"
         unmountOnExit
       >
-        <nav className="Nav">
+        <nav onClick={toggleNav}  className="Nav">
           <NavLink to="/"  >Home</NavLink>
           <NavLink to="/projects" >Projects</NavLink>
           <NavLink to="/about">About Me</NavLink>
